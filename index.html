@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Registro QR</title>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Registro QR</h1>
+
+    <div class="container">
+        <!-- Contenedor para el lector de QR -->
+        <div id="qr-reader"></div>
+
+        <!-- Mensaje de confirmación -->
+        <div id="message" class="message">
+            <span id="qr-result"></span>
+            <img class="check-icon" src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="Check">
+        </div>
+    </div>
+    <button class="custom-button" id="exportarExcel">Exportar</button>
+    <script src="lector_qr.js"></script>
+</body>
+</html>

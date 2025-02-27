@@ -1,0 +1,84 @@
+input[type="text"] {
+    position: absolute;
+    width: 200px;  /* Asegúrate de que tenga un tamaño visible */
+    height: 30px;  /* Asegúrate de que tenga un tamaño visible */
+    opacity: 1;    /* Visible */
+    z-index: 10;   /* Si hay otros elementos superpuestos */
+}
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo del cuerpo */
+body {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Estilo del título */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Lector de QR */
+#qr-reader {
+    width: 100%;
+    max-width: 300px;
+    border: 0px solid #333;
+    border-radius: 0px;
+    padding: 0px;
+    background: white;
+}
+
+/* Mensaje de éxito */
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.message.visible {
+    opacity: 1;
+}
+
+/* Icono de check */
+.check-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* Botón personalizado */
+.custom-button {
+    background-color: #BFB800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #9F9A00; /* Color más oscuro al pasar el mouse */
+}
