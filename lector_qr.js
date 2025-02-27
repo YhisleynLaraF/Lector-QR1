@@ -7,6 +7,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // 💾 Abrir o crear la base de datos
     const request = indexedDB.open(dbName, dbVersion);
 
+    function playBeep() {
+        const context = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = context.createOscillator();
+        oscillator.type = "sine"; // Tipo de onda (senoidal para un "bip" limpio)
+        oscillator.frequency.setValueAtTime(1000, context.currentTime); // Frecuencia en Hz (1000 es un buen "bip")
+        oscillator.connect(context.destination);
+        oscillator.start();
+        setTimeout(() => {
+            oscillator.stop();
+        }, 500); // Duración del sonido en milisegundos
+    }
+
     request.onupgradeneeded = function (event) {
         db = event.target.result;
         if (!db.objectStoreNames.contains("Registros")) {
@@ -39,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
         // Mostrar el mensaje con el check
         messageDiv.classList.add("visible");
-
+        playBeep();
         // Ocultar el mensaje después de 3 segundos
         setTimeout(() => {
             messageDiv.classList.remove("visible");
@@ -149,6 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const request = objectStore.add(nuevoRegistro);
     
         request.onsuccess = function(event) {
+            
             console.log("Registro insertado con éxito.");
         };
     
