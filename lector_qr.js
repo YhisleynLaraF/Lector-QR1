@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let qrScanner = new Html5Qrcode("qr-reader");
     qrScanner.start(
-        { facingMode: "environment" }, // Usa cámara trasera
+        { facingMode: "user" }, // Usa cámara trasera
         { fps: 10, qrbox: { width: 250, height: 250 } },
         onScanSuccess,
         onScanError
